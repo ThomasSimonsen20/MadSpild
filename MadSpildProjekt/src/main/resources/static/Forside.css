@@ -1,13 +1,12 @@
 
 
-.imagefullsize {
-
-    position: center;
-
-    padding-top: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 50px;
 
 
+.responsive {
+
+    width: 100%;
+    max-width: 1440px;
+    height: auto;
 }
+
+
