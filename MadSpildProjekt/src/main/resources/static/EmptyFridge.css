@@ -64,7 +64,7 @@
     float: left;
     width: 16.6667%;
     padding: 15px;
-    height: 200px; /* Should be removed. Only for demonstration */
+    height: 300px; /* Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */
