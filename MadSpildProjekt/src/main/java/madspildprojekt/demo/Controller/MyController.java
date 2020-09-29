@@ -16,6 +16,15 @@ public class MyController {
         return "FoodBank" ;
     }
 
+    @GetMapping("/ReadMore")
+    public String ReadMore() {
+        return "ReadMore" ;
+    }
+
+    @GetMapping("/EmptyFridge")
+    public String EmptyFridge() {
+        return "EmptyFridge" ;
+    }
 
 
 
