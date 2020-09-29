@@ -25,3 +25,35 @@
     background-color: #44D7B6;
     color: white;
 }
+
+.mapouter{position:relative;text-align:center;height:500px;width:1000px }
+.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:1000px;}
+
+iframe {
+    width: 1000px;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 20%;
+
+}
+
+table, th, td {
+    border: #eeeeee;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 7px;
+    text-align: left;
+}
+#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+#t01 tr:nth-child(odd) {
+    background-color: #fff;
+}
+#t01 th {
+    background-color: black;
+    color: white;
+}
