@@ -28,10 +28,10 @@
 
 
 #myInput {
-    background-image: url("static/images/searching.png"); /* Add a search icon to input */
+    background-image: url("/images/searching.png"); /* Add a search icon to input */
     background-position: 10px 12px; /* Position the search icon */
     background-repeat: no-repeat; /* Do not repeat the icon image */
-    width: 60%; /* Full-width */
+    width: 100%; /* Full-width */
     font-size: 16px; /* Increase font-size */
     padding: 12px 20px 12px 40px; /* Add some padding */
     border: 1px solid #ddd; /* Add a grey border */
@@ -58,4 +58,19 @@
 
 #myUL li a:hover:not(.header) {
     background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+
+.column {
+    float: left;
+    width: 16.6667%;
+    padding: 15px;
+    height: 200px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    padding: 5px ;
 }
