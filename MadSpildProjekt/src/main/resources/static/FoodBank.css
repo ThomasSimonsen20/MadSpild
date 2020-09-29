@@ -1,29 +1,3 @@
-
-
-
-/* Makes images responsive with a fixed max width*/
-
-.responsive {
-    width: 100%;
-    max-width: 1440px;
-    height: auto;
-    max-height: 720px;
-}
-/* h1 styling*/
-h1 {
-
-    font-family: Montserrat;
-    font-weight: bolder;
-    font-size: 75px;
-    color: #44D7B6;
-    letter-spacing: -0.27px;
-    text-align: center;
-
-
-
-}
-
-
 /* Add a black background color to the top navigation */
 .topnav {
     background-color: black;
@@ -51,10 +25,3 @@ h1 {
     background-color: #44D7B6;
     color: white;
 }
-
-
-
-
-
-
-

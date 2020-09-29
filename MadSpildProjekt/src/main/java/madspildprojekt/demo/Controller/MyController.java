@@ -11,6 +11,13 @@ public class MyController {
         return "Forside" ;
     }
 
+    @GetMapping("/foodbank")
+    public String foodbank() {
+        return "FoodBank" ;
+    }
+
+
+
 
 
 }
