@@ -65,7 +65,6 @@
     width: 31%;
     padding: 15px;
     height: 300px; /* Should be removed. Only for demonstration */
-    visibility: hidden;
 }
 
 /* Clear floats after the columns */
