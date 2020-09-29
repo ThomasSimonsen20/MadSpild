@@ -5,8 +5,9 @@
 
 .responsive {
     width: 100%;
-    max-width: 1920px;
+    max-width: 1440px;
     height: auto;
+    max-height: 720px;
 }
 /* h1 styling*/
 h1 {
