@@ -1,7 +1,6 @@
 .topnav {
-
     text-align: center;
-    background-color: transparent;
+    background-color: black;
     overflow: hidden;
 }
 
@@ -26,5 +25,48 @@
 .topnav a.active {
     background-color: #9944D7B6;
     border-radius: 25px;
+    color: white;
+}
+
+/* FRONTPAGE STYLING FRONTPAGE STYLING FRONTPAGE STYLING FRONTPAGE STYLING FRONTPAGE STYLING */
+/* h1 styling*/
+h1 {
+    font-family: Montserrat;
+    font-weight: bolder;
+    font-size: 75px;
+    color: #44D7B6;
+    letter-spacing: -0.27px;
+    text-align: center;}
+
+/* FOODBANK STYLING FOODBANK STYLING FOODBANK STYLING FOODBANK STYLING FOODBANK STYLING */
+
+.mapouter{position:relative;text-align:center;height:500px;width:1000px }
+.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:1000px;}
+
+iframe {
+    width: 1000px;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 20%;
+}
+
+table, th, td {
+    border: #eeeeee;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 7px;
+    text-align: left;
+}
+#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+#t01 tr:nth-child(odd) {
+    background-color: #fff;
+}
+#t01 th {
+    background-color: black;
     color: white;
 }
