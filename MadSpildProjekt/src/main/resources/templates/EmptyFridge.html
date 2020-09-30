@@ -31,20 +31,19 @@
 <br/>
 
 <div class="searchbox">
-<input type="text" id="text" onkeyup="myFunction()" placeholder="Jeg vil lave mad som indeholder..">
-    <button id="add">Add</button>
+<input type="text" id="text" onkeyup="myFunction(event)" placeholder="Jeg vil lave mad som indeholder..">
 </div>
 
 <ul id="myUL" style="display: none">
 
-    <li><a href="#">Kylling</a></li>
+    <li onclick="addListItem(event)" ><a>Kylling</a></li>
 
-    <li><a href="#">Billy</a></li>
-    <li><a href="#">Bob</a></li>
+    <li onclick="addListItem(event)" ><a>Billy</a></li>
+    <li onclick="addListItem(event)" ><a>Bob</a></li>
 
-    <li><a href="#">Calvin</a></li>
-    <li><a href="#">Christina</a></li>
-    <li><a href="#">Cindy</a></li>
+    <li onclick="addListItem(event)" ><a>Calvin</a></li>
+    <li onclick="addListItem(event)" ><a>Christina</a></li>
+    <li onclick="addListItem(event)" ><a>Cindy</a></li>
 </ul>
 
 <ul class="empty_fridge__search-ingredient" id="list">
@@ -54,18 +53,23 @@
 
 
 <script>
-    function myFunction() {
-        // Declare variables
+    function myFunction(event) {
         var input, filter, ul, li, a, i;
         input = document.getElementById('text');
         filter = input.value.toUpperCase();
+        if (event.keyCode == 13) {
+            addToList();
+        }
+
+        else {
+
         ul = document.getElementById("myUL");
         li = ul.getElementsByTagName('li');
 
-        if(input.value.length == 0){
+        if (input.value.length == 0) {
             ul.style.display = "none";
             return;
-        }else{
+        } else {
             ul.style.display = "block";
         }
         // Loop through all list items, and hide those who don't match the search query
@@ -78,12 +82,13 @@
             }
         }
     }
+    }
 
 </script>
 
 <script>
-    (function () {
-        document.querySelector('#add').addEventListener('click', function () {
+    function addToList() {
+
             let input = document.querySelector('#text');
             let list = document.querySelector('#list');
 
@@ -94,8 +99,21 @@
             list.appendChild(item); // append li node to list
 
             input.value = ""; // clear input
-        });
-    })();
+    }
+</script>
+
+<script>
+    function addListItem(e) {
+
+        let list = document.querySelector('#list');
+
+        let item = document.createElement('li'); // create li node
+        let itemText = document.createTextNode(e.target.innerText); // create text node
+
+        item.appendChild(itemText); // append text node to li node
+        list.appendChild(item); // append li node to list
+
+    }
 </script>
 
 <div class="row">
