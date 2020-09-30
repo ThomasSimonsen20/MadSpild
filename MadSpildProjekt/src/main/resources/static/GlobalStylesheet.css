@@ -78,3 +78,24 @@ th, td {
     background-color: black;
     color: white;
 }
+
+p.big {
+
+
+    font-weight: lighter;
+    font-size: medium;
+    font-family: Montserrat;
+    line-height: 1.5;
+
+
+}
+.header {
+    background-image: url("images/logo4.png") ;
+
+
+    background-position: left;
+
+    height: 100px;
+
+    width: 237px;
+}
