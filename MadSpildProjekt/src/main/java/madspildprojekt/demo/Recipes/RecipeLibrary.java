@@ -9,4 +9,16 @@ public class RecipeLibrary {
     public void add(Recipe r){
         recipeLibrary.add(r);
     }
+
+
+    public ArrayList<Recipe> getRecipeLibrary() {
+        return recipeLibrary;
+    }
+
+    @Override
+    public String toString() {
+        return "RecipeLibrary{" +
+                "recipeLibrary=" + recipeLibrary +
+                '}';
+    }
 }

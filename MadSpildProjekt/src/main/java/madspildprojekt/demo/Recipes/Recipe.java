@@ -6,9 +6,9 @@ public class Recipe {
 
     private String navn;
     private String fremgangsmåde;
-    private ArrayList<String> ingredienser = new ArrayList<>();
+    private String ingredienser;
 
-    public Recipe(String navn, String fremgangsmåde, ArrayList<String> ingredienser){
+    public Recipe(String navn, String fremgangsmåde, String ingredienser){
         this.navn = navn;
         this.fremgangsmåde = fremgangsmåde;
         this.ingredienser = ingredienser;
@@ -28,10 +28,11 @@ public class Recipe {
         this.fremgangsmåde = fremgangsmåde;
     }
 
-    public void setIngredienser(String ... ingredienser) {
-        for (String ingrediens: ingredienser) {
+    public void setIngredienser(String ingredienser) {
+        /*for (String ingrediens: ingredienser) {
             this.ingredienser.add(ingrediens);
-        }
+        } */
+        this.ingredienser = ingredienser;
     }
 
     ///////////////////////////////////////////////////////////////
@@ -47,7 +48,16 @@ public class Recipe {
         return fremgangsmåde;
     }
 
-    public ArrayList<String> getIngredienser() {
+    public String getIngredienser() {
         return ingredienser;
+    }
+
+    @Override
+    public String toString() {
+        return "Recipe{" +
+                "navn='" + navn + '\'' +
+                ", fremgangsmåde='" + fremgangsmåde + '\'' +
+                ", ingredienser='" + ingredienser + '\'' +
+                '}';
     }
 }

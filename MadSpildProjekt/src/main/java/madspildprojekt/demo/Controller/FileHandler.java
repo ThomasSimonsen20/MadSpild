@@ -21,16 +21,17 @@ public class FileHandler {
             String line;
             String navn;
             String fremgangsmåde;
-            ArrayList<String> ingredienser = new ArrayList<>();
+            String ingredienser;
 
             while ((line = br.readLine()) != null) {
                 Scanner scan = new Scanner(line);
                 scan.useDelimiter("//");
                 navn = scan.next();
                 fremgangsmåde = scan.next();
-                for (int i = 0; i <ingredienser.size() ; i++) {
+                /*for (int i = 0; i <ingredienser.size() ; i++) {
                     ingredienser.add(scan.next());
-                }
+                }*/
+                ingredienser = scan.next();
 
                 recipeLibrary.add(new Recipe(navn, fremgangsmåde, ingredienser));
 
