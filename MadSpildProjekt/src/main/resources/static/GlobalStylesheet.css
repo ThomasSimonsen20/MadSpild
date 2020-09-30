@@ -1,13 +1,15 @@
 .topnav {
     text-align: center;
-    background-color: black;
+    background-color: transparent;
     overflow: hidden;
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
     display: inline-block;
-    color: #ffffff;
+    color: #fefff3;
+    background-color: rgba(153, 68, 215, 0.3);
+    border-radius: 25px;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -18,7 +20,7 @@
 .topnav a:hover {
     background-color: #9944D7B6;
     border-radius: 25px;
-    color: black;
+    color: #ffffff;
 }
 
 /* Add a color to the active/current link */
