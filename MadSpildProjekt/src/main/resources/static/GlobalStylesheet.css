@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+*{font-family: 'Montserrat', sans-serif;}
+
 .topnav {
     text-align: center;
     background-color: transparent;
@@ -33,7 +37,7 @@
 /* FRONTPAGE STYLING FRONTPAGE STYLING FRONTPAGE STYLING FRONTPAGE STYLING FRONTPAGE STYLING */
 /* h1 styling*/
 h1 {
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
     font-size: 75px;
     color: #44D7B6;
