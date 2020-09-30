@@ -59,6 +59,7 @@
         input = document.getElementById('text');
         filter = input.value.toUpperCase();
         if (event.keyCode == 13) {
+            event.preventDefault();
             addToList();
         }
 
