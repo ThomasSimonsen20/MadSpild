@@ -5,20 +5,16 @@
     background-repeat: no-repeat; /* Do not repeat the icon image */
     width: 100%; /* Full-width */
     font-size: 16px; /* Increase font-size */
-    padding: 12px 0px; /* Add some padding */
+    padding: 12px 20px 12px 40px; /* Add some padding */
     border: 1px solid #ddd; /* Add a grey border */
-    margin-bottom: 2px; /* Add some space below the input */
-    text-indent: 40px;
+    margin-bottom: 12px; /* Add some space below the input */
 }
 
 #myUL {
     /* Remove default list styling */
     list-style-type: none;
-    max-width: 500px;
-    margin: auto;
-    border-radius: 25px;
-    padding: 0 20px;
-    text-decoration: none;
+    padding: 0;
+    margin: 0;
 }
 
 #myUL li a {
@@ -36,7 +32,12 @@
     background-color: #eee; /* Add a hover effect to all links, except for headers */
 }
 
-
+.column {
+    float: left;
+    width: 28%;
+    padding: 15px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
 
 /* Clear floats after the columns */
 .row:after {
@@ -56,7 +57,6 @@
     text-overflow: ellipsis;
     margin:1rem 0;
     padding-inline-start: 0;
-    justify-content: center;
 }
 
 .empty_fridge__search-ingredient li {
@@ -70,10 +70,9 @@
 
 div.searchbox {
     max-width: 500px;
-    width: 100%;
     margin: auto;
     border-radius: 25px;
-    padding: 0px 20px;
+    padding: 20px;
     text-decoration: none;
 }
 
@@ -82,22 +81,6 @@ input {
     border-radius: 15px;
     border:solid 1px black;
     padding:5px;
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.container a {
-    display: block;
-    width: 33%;
-
-}
-
-.container img {
-    width: 100%;
-    height: auto;
 }
 
 

@@ -51,7 +51,9 @@
 
 </ul>
 
+<div id="recipeContainer">
 
+</div>
 
 <script>
     function myFunction(event) {
@@ -86,9 +88,7 @@
     }
     }
 
-</script>
 
-<script>
     function addToList() {
 
             let input = document.querySelector('#text');
@@ -102,9 +102,7 @@
 
             input.value = ""; // clear input
     }
-</script>
 
-<script>
     function addListItem(e) {
 
         let list = document.querySelector('#list');
@@ -116,24 +114,53 @@
         list.appendChild(item); // append li node to list
 
     }
+
+    function displayRecipes(recipes) {
+        let container = document.createElement('div');
+        container.classList.add('container');
+
+        let recipeCard, recipeImage;
+        for (let i = 0; i < recipes.length; i++) {
+            recipeCard = document.createElement('a');
+            recipeCard.setAttribute('href', recipes[i].url);
+            recipeImage = document.createElement('img');
+            recipeImage.src = recipes[i].image;
+
+            recipeCard.appendChild(recipeImage);
+            container.appendChild(recipeCard);
+        }
+        document.querySelector('#recipeContainer').appendChild(container);
+    }
+
+     function filterRecipes(ingredients) {
+        let recipes = {"recipes": [
+                {"name" : "recipe1",
+                    "image" : "/images/1.png",
+                    "ingredients" : ["chicken", "bob"],
+                    "url" : "https://www.google.dk"
+                },
+                {"name" : "recipe2",
+                    "image" : "/images/2.png",
+                    "ingredients" : ["chicken", "bob"],
+                    "url" : "https://www.google.dk"
+                },
+                {"name" : "recipe3",
+                    "image" : "/images/3.png",
+                    "ingredients" : ["chicken", "bob"],
+                    "url" : "https://www.google.dk"
+                }
+            ]};
+        displayRecipes(recipes.recipes);
+
+
+    }
+
+    filterRecipes('yes');
 </script>
 
-<div class="row">
-    <a href="#recipe1"> <div class="column" style="background-image: url(/images/1.png);background-size: 100% 100%"></div> </a>
-    <a href="#recipe2"> <div class="column" style="background-image: url(/images/2.png);background-size: 100% 100%"></div> </a>
-    <a href="#recipe3"> <div class="column" style="background-image: url(/images/3.png);background-size: 100% 100%"></div> </a>
 
 
 
-</div>
-
-<div class="row">
-    <a href="#recipe1"> <div class="column" style="background-image: url(/images/4.png);background-size: 100% 100%"></div> </a>
-    <a href="#recipe2"> <div class="column" style="background-image: url(/images/5.png);background-size: 100% 100%"></div> </a>
-    <a href="#recipe3"> <div class="column" style="background-image: url(/images/6.png);background-size: 100% 100%"></div> </a>
-
-
-</div>
 
 
 
