@@ -39,12 +39,12 @@
 
     <li onclick="addListItem(event)" ><a>Kylling</a></li>
 
-    <li onclick="addListItem(event)" ><a>Billy</a></li>
-    <li onclick="addListItem(event)" ><a>Bob</a></li>
+    <li onclick="addListItem(event)" ><a>Tomat</a></li>
+    <li onclick="addListItem(event)" ><a>blåbær</a></li>
 
-    <li onclick="addListItem(event)" ><a>Calvin</a></li>
-    <li onclick="addListItem(event)" ><a>Christina</a></li>
-    <li onclick="addListItem(event)" ><a>Cindy</a></li>
+    <li onclick="addListItem(event)" ><a>Avocado</a></li>
+    <li onclick="addListItem(event)" ><a>Laks</a></li>
+    <li onclick="addListItem(event)" ><a>Salat</a></li>
 </ul>
 
 <ul class="empty_fridge__search-ingredient" id="list">
@@ -56,6 +56,41 @@
 </div>
 
 <script>
+    var recipes = [
+            {"name" : "recipe1",
+                "image" : "/images/1.png",
+                "ingredients" : ["Avocado", "Tomat"],
+                "url" : "https://www.google.dk"
+            },
+            {"name" : "recipe2",
+                "image" : "/images/2.png",
+                "ingredients" : ["blåbær"],
+                "url" : "https://www.google.dk"
+            },
+            {"name" : "recipe3",
+                "image" : "/images/3.png",
+                "ingredients" : ["Laks", "Salat", "Tomat"],
+                "url" : "https://www.google.dk"
+            },
+            {"name" : "recipe4",
+                "image" : "/images/4.png",
+                "ingredients" : ["Tomat"],
+                "url" : "https://www.google.dk"
+            },
+            {"name" : "recipe5",
+                "image" : "/images/5.png",
+                "ingredients" : ["Avocado", "Salat"],
+                "url" : "https://www.google.dk"
+            },
+            {"name" : "recipe6",
+                "image" : "/images/6.png",
+                "ingredients" : ["Avocado", "Salat", "Tomat"],
+                "url" : "https://www.google.dk"
+            }
+        ];
+
+    var ingredientArray = [];
+
     function myFunction(event) {
         var input, filter, ul, li, a, i;
         input = document.getElementById('text');
@@ -88,34 +123,51 @@
     }
     }
 
-
     function addToList() {
-
             let input = document.querySelector('#text');
-            let list = document.querySelector('#list');
-
-            let item = document.createElement('li'); // create li node
-            let itemText = document.createTextNode(input.value); // create text node
-
-            item.appendChild(itemText); // append text node to li node
-            list.appendChild(item); // append li node to list
+            addIngredientToList(input.value);
 
             input.value = ""; // clear input
     }
 
     function addListItem(e) {
+        addIngredientToList(e.target.innerText);
+    }
 
-        let list = document.querySelector('#list');
+    function addIngredientToList(ingredient) {
+        if (!ingredientArray.includes(ingredient)) {
+            let list = document.querySelector('#list');
+            let item = document.createElement('li'); // create li node
+            let itemText = document.createTextNode(ingredient); // create text node
 
-        let item = document.createElement('li'); // create li node
-        let itemText = document.createTextNode(e.target.innerText); // create text node
+            item.appendChild(itemText); // append text node to li node
+            item.addEventListener('click', () => deleteIngredientFromList(item, ingredient));
+            list.appendChild(item); // append li node to list
 
-        item.appendChild(itemText); // append text node to li node
-        list.appendChild(item); // append li node to list
+            ingredientArray.push(ingredient);
+        }
+        filterRecipes();
+
 
     }
 
+    function deleteIngredientFromList(item, ingredient) {
+        let index = ingredientArray.indexOf(ingredient);
+
+        if (index > -1) {
+            ingredientArray.splice(index, 1);
+
+            item.parentNode.removeChild(item);
+        }
+
+        filterRecipes();
+    }
+
     function displayRecipes(recipes) {
+        console.log(recipes);
+        if (document.querySelector('.container') != null) {
+            document.querySelector('#recipeContainer').removeChild(document.querySelector('.container'));
+        }
         let container = document.createElement('div');
         container.classList.add('container');
 
@@ -132,30 +184,28 @@
         document.querySelector('#recipeContainer').appendChild(container);
     }
 
-     function filterRecipes(ingredients) {
-        let recipes = {"recipes": [
-                {"name" : "recipe1",
-                    "image" : "/images/1.png",
-                    "ingredients" : ["chicken", "bob"],
-                    "url" : "https://www.google.dk"
-                },
-                {"name" : "recipe2",
-                    "image" : "/images/2.png",
-                    "ingredients" : ["chicken", "bob"],
-                    "url" : "https://www.google.dk"
-                },
-                {"name" : "recipe3",
-                    "image" : "/images/3.png",
-                    "ingredients" : ["chicken", "bob"],
-                    "url" : "https://www.google.dk"
+     function filterRecipes() {
+        let resultRecipes = [];
+
+        if (ingredientArray.length != 0) {
+            recipes.forEach(function (recipe) {
+                let match = 0;
+                for (let i = 0; i < ingredientArray.length; i++) {
+                    let index = recipe.ingredients.indexOf(ingredientArray[i]);
+                    if (index > -1) {
+                        match++;
+                    }
+
                 }
-            ]};
-        displayRecipes(recipes.recipes);
-
-
+                if (match == ingredientArray.length) {
+                    resultRecipes.push(recipe);
+                }
+            });
+        }
+        displayRecipes(resultRecipes);
     }
 
-    filterRecipes('yes');
+    filterRecipes();
 </script>
 
 

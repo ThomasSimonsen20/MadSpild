@@ -1,7 +1,0 @@
-{"recipes": [
-  {"name" : "recipe1",
-    "image" : "/images/1.png",
-    "ingredients" : ["chicken", "bob"],
-    "url" : "www.google.dk"
-  }
-]}
