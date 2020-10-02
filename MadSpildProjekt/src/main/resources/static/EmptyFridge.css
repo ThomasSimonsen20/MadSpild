@@ -47,6 +47,7 @@
 }
 
 .empty_fridge__search-ingredient {
+
     display:flex;
     list-style: none;
     white-space: nowrap;
@@ -60,6 +61,10 @@
 }
 
 .empty_fridge__search-ingredient li {
+    background-image: url("/images/Black-X-Letter.png");
+    background-size: 24px;
+    background-position: 10px 10px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
     background-color:#fff;
     border:1px solid #384241;
     border-radius:50em;
