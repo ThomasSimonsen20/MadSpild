@@ -6,9 +6,10 @@
 
 
 .topnav {
-    padding-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     overflow: hidden;
-    background-color: #ffffff;
+    background-color: #fdfbf9;
     display: block;
     text-align: center;
 
@@ -39,13 +40,40 @@
     color: white;
 }
 
+body {
+    background-image: url("images/TextureBackground.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.scribble-container {
+    padding-top: 100px;
+    position: relative;
+    text-align: center;
+    color: white;
+    transform: rotate(-10deg);
+}
+
+.scribble-text {
+    padding-top: 90px;
+    color: #9944d7;
+    position: absolute;
+    font-size: 28px;
+    font-weight: 900;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
 /* FRONTPAGE STYLING FRONTPAGE STYLING FRONTPAGE STYLING FRONTPAGE STYLING FRONTPAGE STYLING */
 /* h1 styling*/
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
     font-size: 75px;
-    color: #44D7B6;
+    color: #9944D7B6;
     letter-spacing: -0.27px;
     text-align: center;}
 
