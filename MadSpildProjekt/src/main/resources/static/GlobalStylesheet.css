@@ -47,27 +47,48 @@ body {
     background-size: cover;
 }
 
-.scribble-container {
-    padding-top: 100px;
+.scribble-container-frontpage {
+    padding-top: 50px;
     position: relative;
     text-align: center;
     color: white;
     transform: rotate(-10deg);
 }
 
-.scribble-text {
+.scribble-text-frontpage {
     padding-top: 90px;
     color: #9944d7;
     position: absolute;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 900;
+    width: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.scribble-container-empty-frigde {
+    padding-top: 2px;
+    position: relative;
+    text-align: center;
+    color: white;
 
 }
 
-/* FRONTPAGE STYLING FRONTPAGE STYLING FRONTPAGE STYLING FRONTPAGE STYLING FRONTPAGE STYLING */
+.scribble-text-empty-frigde {
+    padding-top: 6px;
+    color: #9944d7;
+    position: absolute;
+    font-size: 15px;
+    font-weight: 600;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
 /* h1 styling*/
 h1 {
     font-family: 'Montserrat', sans-serif;
