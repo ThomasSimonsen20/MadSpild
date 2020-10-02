@@ -48,7 +48,8 @@ body {
 }
 
 .scribble-container-frontpage {
-    padding-top: 50px;
+    padding-top: 60px;
+    padding-bottom: 50px;
     position: relative;
     text-align: center;
     color: white;
@@ -56,7 +57,7 @@ body {
 }
 
 .scribble-text-frontpage {
-    padding-top: 90px;
+    padding-top: 2%;
     color: #9944d7;
     position: absolute;
     font-size: 24px;
