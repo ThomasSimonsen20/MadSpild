@@ -40,14 +40,6 @@
 
 <ul id="myUL" style="display: none" >
 
-    <li onclick="addListItem(event)" ><a>Kylling</a></li>
-
-    <li onclick="addListItem(event)" ><a>Tomat</a></li>
-    <li onclick="addListItem(event)" ><a>Blåbær</a></li>
-
-    <li onclick="addListItem(event)" ><a>Avocado</a></li>
-    <li onclick="addListItem(event)" ><a>Laks</a></li>
-    <li onclick="addListItem(event)" ><a>Salat</a></li>
 </ul>
 
 <ul class="empty_fridge__search-ingredient" id="list">
@@ -59,6 +51,8 @@
 </div>
 
 <script>
+    var presetIngredients = ['Kylling','Tomat','Blåbær','Avocado','Laks','Salat'];
+
     var recipes = [
             {"name" : "recipe1",
                 "image" : "/images/1.png",
@@ -94,6 +88,24 @@
 
     var ingredientArray = [];
 
+    function createAutoCompleteList() {
+
+      let listItem, itemName, listContainer;
+
+      listContainer = document.querySelector('#myUL');
+        for (let i = 0; i < presetIngredients.length; i++) {
+            listItem = document.createElement("li");
+            itemName = document.createElement('a');
+
+            itemName.innerText = presetIngredients[i];
+            listItem.appendChild(itemName);
+            listItem.addEventListener('click', () => addListItem(event));
+
+            listContainer.appendChild(listItem);
+        }
+
+    }
+
     function myFunction(event) {
         var input, filter, ul, li, a, i;
         input = document.getElementById('text');
@@ -101,9 +113,7 @@
         if (event.keyCode == 13) {
             event.preventDefault();
             addToList();
-        }
-
-        else {
+        } else {
 
         ul = document.getElementById("myUL");
         li = ul.getElementsByTagName('li');
@@ -114,7 +124,7 @@
         } else {
             ul.style.display = "block";
         }
-        // Loop through all list items, and hide those who don't match the search query
+
         for (i = 0; i < li.length; i++) {
             a = li[i].getElementsByTagName("a")[0];
             if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
@@ -138,19 +148,34 @@
     }
 
     function addIngredientToList(ingredient) {
-        if (!ingredientArray.includes(ingredient)) {
-            let list = document.querySelector('#list');
-            let item = document.createElement('li'); // create li node
-            let itemText = document.createTextNode(ingredient); // create text node
-
-            item.appendChild(itemText); // append text node to li node
-            item.addEventListener('click', () => deleteIngredientFromList(item, ingredient));
-            list.appendChild(item); // append li node to list
-
-            ingredientArray.push(ingredient);
+        let i = 0;
+        while (i < presetIngredients.length) {
+            console.log(presetIngredients[i],'ingredient');
+            console.log(ingredient,'input');
+            if(presetIngredients[i].toLowerCase().includes(ingredient.toLowerCase())) {
+                ingredient = presetIngredients[i];
+                i = presetIngredients.length+1;
+            } else {
+                i++;
+            }
         }
-        filterRecipes();
+        if (presetIngredients.includes(ingredient)) {
+            if (!ingredientArray.includes(ingredient)) {
+                let list = document.querySelector('#list');
+                let item = document.createElement('li'); // create li node
+                let itemText = document.createTextNode(ingredient); // create text node
 
+                item.appendChild(itemText); // append text node to li node
+                item.addEventListener('click', () => deleteIngredientFromList(item, ingredient));
+                list.appendChild(item); // append li node to list
+
+                ingredientArray.push(ingredient);
+            }
+            let ul = document.getElementById("myUL");
+                ul.style.display = "none";
+
+                filterRecipes();
+        }
 
     }
 
@@ -167,7 +192,6 @@
     }
 
     function displayRecipes(recipes) {
-        console.log(recipes);
         if (document.querySelector('.container') != null) {
             document.querySelector('#recipeContainer').removeChild(document.querySelector('.container'));
         }
@@ -207,7 +231,7 @@
         }
         displayRecipes(resultRecipes);
     }
-
+    createAutoCompleteList();
     filterRecipes();
 </script>
 
