@@ -168,4 +168,9 @@ HEAD
         >>>>>>> f842cfb95957c7095f312d20b11de8b1ee5bfa8c
         }
 
+body {
 
+    display: flex;
+    flex-direction: column;
+    min-height:  100vh;
+}
