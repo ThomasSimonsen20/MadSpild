@@ -58,6 +58,7 @@ body {
 
 .scribble-text-frontpage {
     padding-top: 2%;
+    margin-left: 15px;
     color: #9944d7;
     position: absolute;
     font-size: 24px;
@@ -97,7 +98,6 @@ h1 {
     font-weight: bolder;
     font-size: 75px;
     color: #9944D7B6;
-
     letter-spacing: -0.27px;
     text-align: center;
 }
@@ -144,11 +144,7 @@ p.big {
     line-height: 1.5;
 }
 
-.row {
-    width: 50%;
-    background-color: #333;
 
-}
 
 .header {
     background-image: url("images/logo4.png") ;
