@@ -92,12 +92,15 @@ body {
 
 /* h1 styling*/
 h1 {
+    padding-top: 50px;
     font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
     font-size: 75px;
     color: #9944D7B6;
+
     letter-spacing: -0.27px;
-    text-align: center;}
+    text-align: center;
+}
 
 /* FOODBANK STYLING FOODBANK STYLING FOODBANK STYLING FOODBANK STYLING FOODBANK STYLING */
 
@@ -135,15 +138,18 @@ th, td {
 }
 
 p.big {
-
-
     font-weight: lighter;
-    font-size: medium;
+    font-size: large;
     font-family: Montserrat;
     line-height: 1.5;
+}
 
+.row {
+    width: 50%;
+    background-color: #333;
 
 }
+
 .header {
     background-image: url("images/logo4.png") ;
 
@@ -154,5 +160,16 @@ p.big {
 
     width: 237px;
 }
+
+<<<<<<< HEAD
+        .column {
+            float: left;
+            width: 50%;
+            margin-left: 5%;
+            margin-inside: 5%;
+        =======
+        width: 237px;
+        >>>>>>> f842cfb95957c7095f312d20b11de8b1ee5bfa8c
+        }
 
 
